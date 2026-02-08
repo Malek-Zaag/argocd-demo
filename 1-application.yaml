@@ -3,14 +3,22 @@ kind: Application
 metadata:
   name: my-helm-app
   namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-options: Prune=confirm
 spec:
   project: default
   source:
-    chart: 
     repoURL: https://github.com/Malek-Zaag/argocd-demo
-    targetRevision: 0.1.0
+    path: helm-webapp
+    targetRevision: HEAD
     helm:
       releaseName: my-helm-app-release-name
   destination:
     server: "https://kubernetes.default.svc"
     namespace: helm-webapp-ns
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
