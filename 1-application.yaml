@@ -4,7 +4,6 @@ metadata:
   name: my-helm-app
   namespace: argocd
   annotations:
-    argocd.argoproj.io/sync-options: Prune=confirm
 spec:
   project: default
   source:
@@ -15,7 +14,6 @@ spec:
       releaseName: my-helm-app-release-name
       valueFiles:
       - values.yaml
-      - values-dev.yaml
       - values-prod.yaml
   destination:
     server: "https://kubernetes.default.svc"
