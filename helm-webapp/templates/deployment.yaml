@@ -19,8 +19,9 @@ spec:
       containers:
       - name: mycontainer
         image: "{{ .Values.image.name }}:{{ .Values.image.tag }}"
+        imagePullPolicy: Never
         ports:
-        - containerPort: 80
+        - containerPort: 8080
         envFrom:
         - configMapRef:
             name: {{ .Values.configmap.name }}

@@ -9,6 +9,7 @@ spec:
   - port: 80
     protocol: TCP
     name: flask
+    targetPort: 8080
   selector:
     app: {{ .Values.appName }}
     tier: frontend
