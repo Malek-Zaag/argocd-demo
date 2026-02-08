@@ -13,6 +13,10 @@ spec:
     targetRevision: HEAD
     helm:
       releaseName: my-helm-app-release-name
+      valueFiles:
+      - values.yaml
+      - values-dev.yaml
+      - values-prod.yaml
   destination:
     server: "https://kubernetes.default.svc"
     namespace: helm-webapp-ns
