@@ -1,6 +1,8 @@
 bases:
 - ../../base
 
+namespace: app2
+
 patches:
  - path: replicas.yaml
 

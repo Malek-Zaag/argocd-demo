@@ -3,4 +3,4 @@ replicas: 12
 
 configmap:
   data:
-    COLOR: 'PROD Color'
+    COLOR: 'PROD v2 Color'
