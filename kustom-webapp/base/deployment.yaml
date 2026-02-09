@@ -3,14 +3,23 @@ kind: Deployment
 metadata:
   name: mywebapp
 spec:
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      app: myhelmapp
+      tier: frontend
   replicas: 1
   template:
+    metadata:
+      labels:
+        app: myhelmapp
+        tier: frontend
     spec: # Pod spec
       containers:
       - name: mycontainer
-        image: "devopsjourney1/mywebapp:latest"
+        image: "my-sample-app:latest"
         ports:
-        - containerPort: 80
+        - containerPort: 8080
         envFrom:
         - configMapRef:
             name: mykustom-map

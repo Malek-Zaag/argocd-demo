@@ -7,4 +7,8 @@ spec:
   - port: 80
     protocol: TCP
     name: flask
+    targetPort: 8080
+  selector:
+    app: myhelmapp
+    tier: frontend
   type: NodePort
