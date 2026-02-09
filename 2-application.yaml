@@ -10,7 +10,7 @@ spec:
     repoURL: 'https://github.com/Malek-Zaag/argocd-demo'
     targetRevision: HEAD
   destination:
-    namespace: default
+    namespace: app2
     server: 'https://kubernetes.default.svc'
   syncPolicy:
     automated:
