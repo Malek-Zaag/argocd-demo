@@ -18,6 +18,7 @@ spec:
       containers:
       - name: mycontainer
         image: "my-sample-app:latest"
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
         envFrom:
